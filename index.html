@@ -2,200 +2,351 @@
 <html lang="uk">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>LA-KRUA</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LA-KRUA | Construction & Engineering</title>
+<meta name="description" content="LA-KRUA — реконструкція, критична інфраструктура, металоконструкції, будівництво та інженерія.">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+
 <style>
+*{margin:0;padding:0;box-sizing:border-box}
 body{
-margin:0;
-font-family:Arial,Helvetica,sans-serif;
-background:#0a0a0a;
+font-family:Inter,sans-serif;
+background:#050505;
 color:#fff;
+overflow-x:hidden;
 }
+a{text-decoration:none;color:inherit}
+.container{width:min(1320px,92%);margin:auto}
+
 header{
-padding:30px;
+position:fixed;
+top:0;
+left:0;
+right:0;
+z-index:1000;
+background:rgba(0,0,0,.82);
+backdrop-filter:blur(14px);
+border-bottom:1px solid rgba(212,167,76,.18);
+}
+nav{
+height:82px;
 display:flex;
-justify-content:space-between;
 align-items:center;
-border-bottom:1px solid rgba(212,175,55,.2);
-flex-wrap:wrap;
-gap:20px;
+justify-content:space-between;
 }
 .logo{
-font-size:32px;
-font-weight:900;
-color:#d4af37;
+font-family:Manrope;
+font-size:30px;
+font-weight:800;
 letter-spacing:2px;
+color:#d4a74c;
 }
-nav a{
-color:#fff;
-margin-left:20px;
-text-decoration:none;
-font-weight:700;
-}
-.lang{
+.menu{
 display:flex;
-gap:10px;
+gap:30px;
+font-weight:600;
+color:#ddd;
 }
-.lang button{
-padding:10px 14px;
-border:1px solid #d4af37;
-background:transparent;
-color:#d4af37;
-cursor:pointer;
-font-weight:700;
-}
-.lang button.active{
-background:#d4af37;
-color:#000;
-}
+.menu a:hover{color:#d4a74c}
+
 .hero{
-padding:120px 40px;
-text-align:center;
-background:linear-gradient(180deg,#0a0a0a,#111);
+min-height:100vh;
+display:flex;
+align-items:center;
+background:
+linear-gradient(rgba(0,0,0,.72),rgba(0,0,0,.78)),
+url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1800&q=80');
+background-size:cover;
+background-position:center;
+padding-top:90px;
 }
-.hero h1{
-font-size:56px;
-margin:0 0 20px;
-color:#d4af37;
+.hero-grid{
+display:grid;
+grid-template-columns:1.1fr .9fr;
+gap:50px;
+align-items:center;
 }
+h1{
+font-family:Manrope;
+font-size:74px;
+line-height:1;
+margin-bottom:24px;
+}
+.gold{color:#d4a74c}
 .hero p{
-font-size:22px;
-max-width:950px;
-margin:auto;
-color:#ccc;
+font-size:21px;
+color:#ddd;
+max-width:650px;
 line-height:1.6;
+margin-bottom:35px;
+}
+.btns{
+display:flex;
+gap:18px;
+flex-wrap:wrap;
 }
 .btn{
+padding:16px 28px;
+border-radius:50px;
+font-weight:700;
+transition:.3s;
 display:inline-block;
-margin-top:35px;
-padding:18px 34px;
-background:#d4af37;
+}
+.primary{
+background:#d4a74c;
 color:#000;
-font-weight:900;
-text-decoration:none;
-border-radius:8px;
 }
-.section{
-padding:80px 40px;
-max-width:1200px;
-margin:auto;
+.primary:hover{
+transform:translateY(-3px);
 }
-.cards{
+.secondary{
+border:1px solid rgba(255,255,255,.2);
+}
+.secondary:hover{
+border-color:#d4a74c;
+color:#d4a74c;
+}
+
+.hero-card{
+background:rgba(255,255,255,.04);
+border:1px solid rgba(212,167,76,.18);
+padding:40px;
+border-radius:30px;
+backdrop-filter:blur(12px);
+text-align:center;
+}
+.hero-card img{
+width:100%;
+border-radius:20px;
+margin-bottom:25px;
+}
+.hero-card h3{
+font-size:30px;
+font-family:Manrope;
+margin-bottom:12px;
+}
+.hero-card p{font-size:16px}
+
+section{padding:95px 0}
+
+.section-title{
+text-align:center;
+margin-bottom:60px;
+}
+.section-title h2{
+font-family:Manrope;
+font-size:52px;
+margin-bottom:14px;
+}
+.section-title p{
+color:#aaa;
+font-size:18px;
+}
+
+.grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:25px;
-margin-top:40px;
+grid-template-columns:repeat(3,1fr);
+gap:24px;
 }
 .card{
-background:#151515;
-padding:30px;
-border:1px solid rgba(212,175,55,.2);
-border-radius:12px;
+background:#0d0d0d;
+border:1px solid rgba(212,167,76,.14);
+padding:34px;
+border-radius:24px;
+transition:.35s;
+}
+.card:hover{
+transform:translateY(-8px);
+border-color:#d4a74c;
 }
 .card h3{
-color:#d4af37;
-margin-top:0;
+font-size:26px;
+margin-bottom:14px;
+font-family:Manrope;
 }
+.card p{
+color:#aaa;
+line-height:1.6;
+}
+
+.dark{
+background:#090909;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:18px;
+}
+.gallery img{
+width:100%;
+height:290px;
+object-fit:cover;
+border-radius:22px;
+transition:.4s;
+}
+.gallery img:hover{
+transform:scale(1.04);
+}
+
 footer{
 padding:35px;
 text-align:center;
 color:#888;
-border-top:1px solid rgba(212,175,55,.1);
+border-top:1px solid rgba(212,167,76,.15);
 }
-@media(max-width:768px){
-.hero h1{font-size:38px;}
-.hero p{font-size:18px;}
-nav{width:100%;}
-nav a{display:inline-block;margin:8px 10px 0 0;}
+
+@media(max-width:980px){
+.hero-grid,.grid,.gallery{
+grid-template-columns:1fr;
+}
+h1{font-size:52px}
+.menu{display:none}
+.hero{text-align:center}
+.btns{justify-content:center}
 }
 </style>
 </head>
+
 <body>
 
 <header>
-<div class="logo">LA-KRUA</div>
-
+<div class="container">
 <nav>
-<a href="#" data-ua="Головна" data-en="Home">Головна</a>
-<a href="#" data-ua="Послуги" data-en="Services">Послуги</a>
-<a href="#" data-ua="Проєкти" data-en="Projects">Проєкти</a>
-<a href="#" data-ua="Контакти" data-en="Contacts">Контакти</a>
+<div class="logo">LA-KRUA</div>
+<div class="menu">
+<a href="#about">Про компанію</a>
+<a href="#services">Послуги</a>
+<a href="#projects">Проєкти</a>
+<a href="#contact">Контакти</a>
+</div>
 </nav>
-
-<div class="lang">
-<button class="active" onclick="setLang('ua')" id="uaBtn">UA</button>
-<button onclick="setLang('en')" id="enBtn">EN</button>
 </div>
 </header>
 
 <section class="hero">
-<h1 data-ua="Будівництво. Захист. Відновлення." data-en="Construction. Protection. Recovery.">
-Будівництво. Захист. Відновлення.
-</h1>
+<div class="container hero-grid">
 
-<p data-ua="LA-KRUA — сучасна будівельно-інжинірингова компанія. Реконструкція критичної інфраструктури, металоконструкції, інженерні мережі, енергетичні об'єкти та комплексний генпідряд."
-data-en="LA-KRUA is a modern construction and engineering company. Reconstruction of critical infrastructure, steel structures, engineering networks, energy facilities and full-cycle general contracting.">
-LA-KRUA — сучасна будівельно-інжинірингова компанія. Реконструкція критичної інфраструктури, металоконструкції, інженерні мережі, енергетичні об'єкти та комплексний генпідряд.
+<div>
+<h1>Будуємо <span class="gold">майбутнє</span><br>України</h1>
+<p>
+LA-KRUA — сучасна будівельно-інженерна компанія.
+Реконструкція критичної інфраструктури, металоконструкції,
+захисні споруди, промислові об’єкти та комплексні рішення.
 </p>
 
-<a href="#" class="btn" data-ua="Зв'язатися" data-en="Contact Us">Зв'язатися</a>
-</section>
-
-<section class="section">
-<h2 style="color:#d4af37;" data-ua="Наші напрямки" data-en="Our направления">Наші напрямки</h2>
-
-<div class="cards">
-
-<div class="card">
-<h3 data-ua="Критична інфраструктура" data-en="Critical Infrastructure">Критична інфраструктура</h3>
-<p data-ua="Відновлення об'єктів енергетики, промисловості та стратегічних вузлів."
-data-en="Recovery of energy, industrial and strategic facilities.">
-Відновлення об'єктів енергетики, промисловості та стратегічних вузлів.
-</p>
+<div class="btns">
+<a href="#contact" class="btn primary">Зв'язатися</a>
+<a href="#services" class="btn secondary">Наші послуги</a>
+</div>
 </div>
 
-<div class="card">
-<h3 data-ua="Металоконструкції" data-en="Steel Structures">Металоконструкції</h3>
-<p data-ua="Виготовлення та монтаж складних інженерних конструкцій."
-data-en="Manufacturing and installation of complex engineering structures.">
-Виготовлення та монтаж складних інженерних конструкцій.
-</p>
-</div>
-
-<div class="card">
-<h3 data-ua="Захисні рішення" data-en="Protective Solutions">Захисні рішення</h3>
-<p data-ua="Антидроновий, протиосколковий та інженерний захист."
-data-en="Anti-drone, anti-fragmentation and engineering protection.">
-Антидроновий, протиосколковий та інженерний захист.
-</p>
-</div>
-
-<div class="card">
-<h3 data-ua="Генпідряд" data-en="General Contracting">Генпідряд</h3>
-<p data-ua="Повний цикл реалізації проєктів від ідеї до здачі об'єкта."
-data-en="Full-cycle project execution from concept to delivery.">
-Повний цикл реалізації проєктів від ідеї до здачі об'єкта.
-</p>
+<div class="hero-card">
+<img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1000&q=80">
+<h3>LA-KRUA</h3>
+<p>Надійність. Якість. Результат.</p>
 </div>
 
 </div>
 </section>
 
-<footer data-ua="© 2026 LA-KRUA. Усі права захищено."
-data-en="© 2026 LA-KRUA. All rights reserved.">
-© 2026 LA-KRUA. Усі права захищено.
+<section id="about">
+<div class="container">
+<div class="section-title">
+<h2>Про компанію</h2>
+<p>Працюємо там, де потрібні швидкість, відповідальність та сильна команда.</p>
+</div>
+
+<div class="grid">
+<div class="card">
+<h3>Інфраструктура</h3>
+<p>Реконструкція об’єктів енергетики, промисловості та муніципальної сфери.</p>
+</div>
+
+<div class="card">
+<h3>Металоконструкції</h3>
+<p>Виготовлення та монтаж конструкцій будь-якої складності.</p>
+</div>
+
+<div class="card">
+<h3>Захист</h3>
+<p>Антидронові, протиосколкові та інженерні рішення для безпеки.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="dark" id="services">
+<div class="container">
+<div class="section-title">
+<h2>Послуги</h2>
+<p>Повний цикл робіт від проєкту до введення в експлуатацію.</p>
+</div>
+
+<div class="grid">
+<div class="card">
+<h3>Будівництво</h3>
+<p>Монолітні роботи, фасади, покрівля, оздоблення.</p>
+</div>
+
+<div class="card">
+<h3>Інженерія</h3>
+<p>Газ, вода, каналізація, зовнішні та внутрішні мережі.</p>
+</div>
+
+<div class="card">
+<h3>Генпідряд</h3>
+<p>Організація всіх процесів та контроль якості.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="projects">
+<div class="container">
+<div class="section-title">
+<h2>Наші об'єкти</h2>
+<p>Сучасний підхід до складних задач.</p>
+</div>
+
+<div class="gallery">
+<img src="https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=1200&q=80">
+<img src="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=1200&q=80">
+<img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80">
+</div>
+</div>
+</section>
+
+<section class="dark" id="contact">
+<div class="container">
+<div class="section-title">
+<h2>Контакти</h2>
+<p>Готові до співпраці та нових викликів.</p>
+</div>
+
+<div class="grid">
+<div class="card">
+<h3>Email</h3>
+<p>tov.lakrua@gmail.com</p>
+</div>
+
+<div class="card">
+<h3>Телефон</h3>
+<p>+38 (0__) ___ __ __</p>
+</div>
+
+<div class="card">
+<h3>Україна</h3>
+<p>Працюємо по всій території країни.</p>
+</div>
+</div>
+</div>
+</section>
+
+<footer>
+© 2026 LA-KRUA. Всі права захищені.
 </footer>
-
-<script>
-function setLang(lang){
-document.querySelectorAll("[data-ua]").forEach(el=>{
-el.innerText=el.getAttribute("data-"+lang);
-});
-document.getElementById("uaBtn").classList.toggle("active",lang==="ua");
-document.getElementById("enBtn").classList.toggle("active",lang==="en");
-document.documentElement.lang=lang;
-}
-</script>
 
 </body>
 </html>
