@@ -1,1 +1,201 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>LA-KRUA</title>
+<style>
+body{
+margin:0;
+font-family:Arial,Helvetica,sans-serif;
+background:#0a0a0a;
+color:#fff;
+}
+header{
+padding:30px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+border-bottom:1px solid rgba(212,175,55,.2);
+flex-wrap:wrap;
+gap:20px;
+}
+.logo{
+font-size:32px;
+font-weight:900;
+color:#d4af37;
+letter-spacing:2px;
+}
+nav a{
+color:#fff;
+margin-left:20px;
+text-decoration:none;
+font-weight:700;
+}
+.lang{
+display:flex;
+gap:10px;
+}
+.lang button{
+padding:10px 14px;
+border:1px solid #d4af37;
+background:transparent;
+color:#d4af37;
+cursor:pointer;
+font-weight:700;
+}
+.lang button.active{
+background:#d4af37;
+color:#000;
+}
+.hero{
+padding:120px 40px;
+text-align:center;
+background:linear-gradient(180deg,#0a0a0a,#111);
+}
+.hero h1{
+font-size:56px;
+margin:0 0 20px;
+color:#d4af37;
+}
+.hero p{
+font-size:22px;
+max-width:950px;
+margin:auto;
+color:#ccc;
+line-height:1.6;
+}
+.btn{
+display:inline-block;
+margin-top:35px;
+padding:18px 34px;
+background:#d4af37;
+color:#000;
+font-weight:900;
+text-decoration:none;
+border-radius:8px;
+}
+.section{
+padding:80px 40px;
+max-width:1200px;
+margin:auto;
+}
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+margin-top:40px;
+}
+.card{
+background:#151515;
+padding:30px;
+border:1px solid rgba(212,175,55,.2);
+border-radius:12px;
+}
+.card h3{
+color:#d4af37;
+margin-top:0;
+}
+footer{
+padding:35px;
+text-align:center;
+color:#888;
+border-top:1px solid rgba(212,175,55,.1);
+}
+@media(max-width:768px){
+.hero h1{font-size:38px;}
+.hero p{font-size:18px;}
+nav{width:100%;}
+nav a{display:inline-block;margin:8px 10px 0 0;}
+}
+</style>
+</head>
+<body>
 
+<header>
+<div class="logo">LA-KRUA</div>
+
+<nav>
+<a href="#" data-ua="Головна" data-en="Home">Головна</a>
+<a href="#" data-ua="Послуги" data-en="Services">Послуги</a>
+<a href="#" data-ua="Проєкти" data-en="Projects">Проєкти</a>
+<a href="#" data-ua="Контакти" data-en="Contacts">Контакти</a>
+</nav>
+
+<div class="lang">
+<button class="active" onclick="setLang('ua')" id="uaBtn">UA</button>
+<button onclick="setLang('en')" id="enBtn">EN</button>
+</div>
+</header>
+
+<section class="hero">
+<h1 data-ua="Будівництво. Захист. Відновлення." data-en="Construction. Protection. Recovery.">
+Будівництво. Захист. Відновлення.
+</h1>
+
+<p data-ua="LA-KRUA — сучасна будівельно-інжинірингова компанія. Реконструкція критичної інфраструктури, металоконструкції, інженерні мережі, енергетичні об'єкти та комплексний генпідряд."
+data-en="LA-KRUA is a modern construction and engineering company. Reconstruction of critical infrastructure, steel structures, engineering networks, energy facilities and full-cycle general contracting.">
+LA-KRUA — сучасна будівельно-інжинірингова компанія. Реконструкція критичної інфраструктури, металоконструкції, інженерні мережі, енергетичні об'єкти та комплексний генпідряд.
+</p>
+
+<a href="#" class="btn" data-ua="Зв'язатися" data-en="Contact Us">Зв'язатися</a>
+</section>
+
+<section class="section">
+<h2 style="color:#d4af37;" data-ua="Наші напрямки" data-en="Our направления">Наші напрямки</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3 data-ua="Критична інфраструктура" data-en="Critical Infrastructure">Критична інфраструктура</h3>
+<p data-ua="Відновлення об'єктів енергетики, промисловості та стратегічних вузлів."
+data-en="Recovery of energy, industrial and strategic facilities.">
+Відновлення об'єктів енергетики, промисловості та стратегічних вузлів.
+</p>
+</div>
+
+<div class="card">
+<h3 data-ua="Металоконструкції" data-en="Steel Structures">Металоконструкції</h3>
+<p data-ua="Виготовлення та монтаж складних інженерних конструкцій."
+data-en="Manufacturing and installation of complex engineering structures.">
+Виготовлення та монтаж складних інженерних конструкцій.
+</p>
+</div>
+
+<div class="card">
+<h3 data-ua="Захисні рішення" data-en="Protective Solutions">Захисні рішення</h3>
+<p data-ua="Антидроновий, протиосколковий та інженерний захист."
+data-en="Anti-drone, anti-fragmentation and engineering protection.">
+Антидроновий, протиосколковий та інженерний захист.
+</p>
+</div>
+
+<div class="card">
+<h3 data-ua="Генпідряд" data-en="General Contracting">Генпідряд</h3>
+<p data-ua="Повний цикл реалізації проєктів від ідеї до здачі об'єкта."
+data-en="Full-cycle project execution from concept to delivery.">
+Повний цикл реалізації проєктів від ідеї до здачі об'єкта.
+</p>
+</div>
+
+</div>
+</section>
+
+<footer data-ua="© 2026 LA-KRUA. Усі права захищено."
+data-en="© 2026 LA-KRUA. All rights reserved.">
+© 2026 LA-KRUA. Усі права захищено.
+</footer>
+
+<script>
+function setLang(lang){
+document.querySelectorAll("[data-ua]").forEach(el=>{
+el.innerText=el.getAttribute("data-"+lang);
+});
+document.getElementById("uaBtn").classList.toggle("active",lang==="ua");
+document.getElementById("enBtn").classList.toggle("active",lang==="en");
+document.documentElement.lang=lang;
+}
+</script>
+
+</body>
+</html>
